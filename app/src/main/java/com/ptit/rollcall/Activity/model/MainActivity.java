@@ -1,8 +1,10 @@
-package com.ptit.rollcall;
+package com.ptit.rollcall.Activity.model;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ptit.rollcall.R;
 
 public class MainActivity extends AppCompatActivity {
 
