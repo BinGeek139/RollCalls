@@ -2,13 +2,13 @@ package com.ptit.rollcall.model.Entity;
 
 import java.util.Calendar;
 
-public class Class {
+public class Classs {
     private int id;
     private String name;
     private Calendar timeStart;
     private Calendar timeEnd;
 
-    public Class(int id, String name, Calendar timeStart, Calendar timeEnd) {
+    public Classs(int id, String name, Calendar timeStart, Calendar timeEnd) {
         this.id = id;
         this.name = name;
         this.timeStart = timeStart;
