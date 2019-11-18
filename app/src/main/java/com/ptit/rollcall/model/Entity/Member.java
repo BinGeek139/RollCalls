@@ -1,20 +1,20 @@
 package com.ptit.rollcall.model.Entity;
 
-import java.util.Calendar;
+
 
 public class Member {
     private int id;
     private String firtName;
     private String lastName;
-    private Calendar dateOfBirth;
-    private boolean isMale;
+    private String dateOfBirth;
+    private String gender;
 
-    public Member(int id, String firtName, String lastName, Calendar dateOfBirth, boolean isMale) {
+    public Member(int id, String firtName, String lastName, String dateOfBirth, String gender) {
         this.id = id;
         this.firtName = firtName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.isMale = isMale;
+        this.gender   = gender;
     }
 
     public int getId() {
@@ -41,19 +41,19 @@ public class Member {
         this.lastName = lastName;
     }
 
-    public Calendar getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Calendar dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean isMale() {
-        return isMale;
+    public String gender() {
+        return gender;
     }
 
-    public void setMale(boolean male) {
-        isMale = male;
+    public void setGender(String male) {
+        gender = male;
     }
 }

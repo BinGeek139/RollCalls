@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.ptit.rollcall.common.CONST;
-import com.ptit.rollcall.common.Conver;
 import com.ptit.rollcall.model.Entity.Classs;
 import com.ptit.rollcall.model.Entity.Member;
 
@@ -50,18 +49,23 @@ public class DatabaseAccess {
         }
         return s;
     }
-//    public List<Classs> getClassAll(){
-//        List<Classs> classses=new ArrayList<Classs>();
-//        String query=String.format(CONST.QUERY_SELECT_ALL,"Class");
-//        cursor=database.rawQuery(query,null);
-//        while (cursor.moveToNext()){
-//            Classs classs=new Classs(cursor.getInt(0),cursor.getString(1), Conver.StringToCalender(cursor.getString(2)),Conver.StringToCalender(3));
-//            classses.add(classs);
-//        }
-//        return  classses;
-//    }
-//    public Member getMember(int id){
-//        String query=String.format(CONST.QUERY_SELECT_ID,"Member",id);
-//        cursor=database.rawQuery()
-//    }
+    public List<Classs> getClassAll(){
+        List<Classs> classses=new ArrayList<Classs>();
+        String query=String.format(CONST.QUERY_SELECT_ALL,"Class");
+        cursor=database.rawQuery(query,null);
+        while (cursor.moveToNext()){
+            Classs classs=new Classs(cursor.getInt(0),cursor.getString(1), cursor.getString(2),cursor.getString(3));
+            classses.add(classs);
+        }
+        return  classses;
+    }
+    public Member getMember(int id){
+        String query=String.format(CONST.QUERY_SELECT_ID,"Member",id);
+        cursor=database.rawQuery(query,null);
+        Member member=null;
+        while (cursor.moveToNext()){
+             member=new Member(id,cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4));
+        }
+        return  member;
+    }
 }

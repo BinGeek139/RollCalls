@@ -1,14 +1,14 @@
 package com.ptit.rollcall.model.Entity;
 
-import java.util.Calendar;
+
 
 public class Classs {
     private int id;
     private String name;
-    private Calendar timeStart;
-    private Calendar timeEnd;
+    private String timeStart;
+    private String timeEnd;
 
-    public Classs(int id, String name, Calendar timeStart, Calendar timeEnd) {
+    public Classs(int id, String name, String timeStart, String timeEnd) {
         this.id = id;
         this.name = name;
         this.timeStart = timeStart;
@@ -31,19 +31,19 @@ public class Classs {
         this.name = name;
     }
 
-    public Calendar getTimeStart() {
+    public String getTimeStart() {
         return timeStart;
     }
 
-    public void setTimeStart(Calendar timeStart) {
+    public void setTimeStart(String timeStart) {
         this.timeStart = timeStart;
     }
 
-    public Calendar getTimeEnd() {
+    public String getTimeEnd() {
         return timeEnd;
     }
 
-    public void setTimeEnd(Calendar timeEnd) {
+    public void setTimeEnd(String timeEnd) {
         this.timeEnd = timeEnd;
     }
 }
