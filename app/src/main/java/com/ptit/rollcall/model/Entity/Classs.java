@@ -1,6 +1,7 @@
 package com.ptit.rollcall.model.Entity;
 
-
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Classs {
     private int id;
@@ -45,5 +46,17 @@ public class Classs {
 
     public void setTimeEnd(String timeEnd) {
         this.timeEnd = timeEnd;
+    }
+
+    //Create fake data
+    public static ArrayList<Classs> createClassList(int numContacts) {
+        ArrayList<Classs> rs = new ArrayList<Classs>();
+        int temp = 0;
+        String string= Calendar.getInstance().toString();
+        for (int i = 1; i <= numContacts; i++) {
+            rs.add(new Classs(++temp, "test", string, string));
+        }
+
+        return rs;
     }
 }

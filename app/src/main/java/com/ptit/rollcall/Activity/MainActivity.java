@@ -2,21 +2,15 @@ package com.ptit.rollcall.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.Toast;
 
 
 import com.ptit.rollcall.R;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import com.ptit.rollcall.common.checkSocket;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
 
 
@@ -31,21 +25,52 @@ public class MainActivity extends AppCompatActivity {
 //        Log.e("tag","ok");
 //        Log.e("infor", "onCreate: "+  databaseAccess.getMember());
 //        databaseAccess.close();
-        InputStream inputStream;
-        try  {
-            inputStream = getResources().openRawResource(R.drawable.a);
-            Log.e("check", "onCreate: " + inputStream.available());
-            byte[] image=new byte[inputStream.available()];
-            inputStream.read(image);
-            String code= Base64.encodeToString(image,1);
-            Socket socket=new Socket("localhost",6789);
-            
-            OutputStream out=socket.getOutputStream();
-            out.write(image);
-            Log.d("ok", "onCreate: send successfull");
-        }catch (IOException e) {
-            Log.e("check", "onCreate: no" );
-        }
+//        InputStream inputStream;
+//        try  {
+//            inputStream = getResources().openRawResource(R.drawable.a);
+//            Log.e("check", "onCreate: " + inputStream.available());
+//            byte[] image=new byte[inputStream.available()];
+//            inputStream.read(image);
+//            String code= Base64.encodeToString(image,1);
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    InetAddress serverAddr = null;
+//                    try {
+//                        serverAddr = InetAddress.getByName("192.168.1.11");
+//                    } catch (UnknownHostException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    try {
+//                        Socket socket = new Socket("192.169.1.11", 8888);
+//                    }catch(IOException e){
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            }).run();
+        checkSocket.check();
+
+
+//            Socket socket= null;
+//            try {
+//                socket = IO.socket("https://192.168.1.11:8888");
+//                socket.connect();
+//
+//                socket.close();
+//            } catch (URISyntaxException e) {
+//                e.printStackTrace();
+//            }
+//            OutputStream out=socket.getOutputStream();
+//            out.write(image);
+//            Log.d("ok", "onCreate: send successfull");
+
+//        }catch (IOException e) {
+//            Log.e("check", "onCreate: no" );
+//            e.printStackTrace();
+//
+//        }
 
 
 

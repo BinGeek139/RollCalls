@@ -1,20 +1,22 @@
 package com.ptit.rollcall.model.Entity;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 
 
 public class Member {
     private int id;
-    private String firtName;
+    private String firstName;
     private String lastName;
     private String dateOfBirth;
     private String gender;
 
-    public Member(int id, String firtName, String lastName, String dateOfBirth, String gender) {
+    public Member(int id, String firstName, String lastName, String dateOfBirth, String gender) {
         this.id = id;
-        this.firtName = firtName;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.gender   = gender;
+        this.gender = gender;
     }
 
     public int getId() {
@@ -26,11 +28,11 @@ public class Member {
     }
 
     public String getFirtName() {
-        return firtName;
+        return firstName;
     }
 
     public void setFirtName(String firtName) {
-        this.firtName = firtName;
+        this.firstName = firtName;
     }
 
     public String getLastName() {
@@ -53,7 +55,19 @@ public class Member {
         return gender;
     }
 
-    public void setGender(String male) {
+    public void setMale(String male) {
         gender = male;
+    }
+
+    //Create fake data
+    public static ArrayList<Member> createMemberList(int numContacts) {
+        ArrayList<Member> rs = new ArrayList<Member>();
+        int temp = 0;
+        String string = Calendar.getInstance().toString();
+        for (int i = 1; i <= numContacts; i++) {
+            rs.add(new Member(++temp, "test first", "test Last", string,(i%2)==0 ?"male":"female" ) );
+        }
+
+        return rs;
     }
 }

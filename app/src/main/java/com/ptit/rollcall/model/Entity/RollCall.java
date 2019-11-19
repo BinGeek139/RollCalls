@@ -3,7 +3,7 @@ package com.ptit.rollcall.model.Entity;
 public class RollCall {
     private int id;
     private Member member;
-    private  Lesson lesson;
+    private Lesson lesson;
 
     public RollCall(int id, Member member, Lesson lesson) {
         this.id = id;

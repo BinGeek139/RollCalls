@@ -37,6 +37,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.codehaus.plexus/plexus-utils
     compile group: 'org.codehaus.plexus', name: 'plexus-utils', version: '3.3.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'io.socket:socket.io-client:1.0.0'
 
 
 }
